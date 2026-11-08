@@ -1,0 +1,186 @@
+@import "tailwindcss";
+
+:root {
+  --bg-desktop: #dcd5c1;
+  --bg-window: #fbf8ef;
+  --bg-paper-alt: #f1ecdd;
+  --bg-chrome: #e6dfd0;
+  --ink: #181615;
+  --ink-muted: #5c574f;
+  --accent-red: #df4b2f;
+  --accent-yellow: #f4b942;
+  --accent-teal: #2d8a75;
+  --accent-blue: #3b5bdb;
+}
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--ink);
+    background-color: var(--bg-desktop);
+  }
+
+  code,
+  pre,
+  .font-mono {
+    font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+}
+
+/* Classic 90s Desktop Dot-Dither Pattern */
+.retro-desktop {
+  background-color: #dcd5c1;
+  background-image: radial-gradient(#a8a08c 1.15px, transparent 1.15px);
+  background-size: 14px 14px;
+}
+
+/* Classic OS Window Frame */
+.retro-window {
+  background-color: #fbf8ef;
+  border: 2px solid #181615;
+  box-shadow: 5px 5px 0px #181615;
+}
+
+.retro-window-sm {
+  background-color: #fbf8ef;
+  border: 2px solid #181615;
+  box-shadow: 3px 3px 0px #181615;
+}
+
+/* Mac OS 8 Pinstripe Titlebar */
+.retro-titlebar {
+  background-color: #e6dfd0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    #e6dfd0 0px,
+    #e6dfd0 2px,
+    #cbc3b1 2px,
+    #cbc3b1 3px
+  );
+  border-bottom: 2px solid #181615;
+}
+
+.retro-titlebar-dark {
+  background-color: #181615;
+  color: #fbf8ef;
+  border-bottom: 2px solid #181615;
+}
+
+/* Mechanical Push Button */
+.retro-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid #181615;
+  box-shadow: 3px 3px 0px #181615;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  transition: transform 75ms ease, box-shadow 75ms ease, background-color 100ms ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+.retro-btn:hover:not(:disabled) {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0px #181615;
+}
+
+.retro-btn:active:not(:disabled) {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #181615;
+}
+
+.retro-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.retro-btn-red {
+  background-color: #df4b2f;
+  color: #fbf8ef;
+}
+.retro-btn-red:hover:not(:disabled) {
+  background-color: #ec573b;
+}
+
+.retro-btn-yellow {
+  background-color: #f4b942;
+  color: #181615;
+}
+.retro-btn-yellow:hover:not(:disabled) {
+  background-color: #f8c458;
+}
+
+.retro-btn-teal {
+  background-color: #2d8a75;
+  color: #fbf8ef;
+}
+.retro-btn-teal:hover:not(:disabled) {
+  background-color: #359c85;
+}
+
+.retro-btn-cream {
+  background-color: #fbf8ef;
+  color: #181615;
+}
+.retro-btn-cream:hover:not(:disabled) {
+  background-color: #f1ecdd;
+}
+
+.retro-btn-ink {
+  background-color: #181615;
+  color: #fbf8ef;
+}
+.retro-btn-ink:hover:not(:disabled) {
+  background-color: #2d2a28;
+}
+
+/* Inset Bevel Input Field */
+.retro-input {
+  background-color: #ffffff;
+  border: 2px solid #181615;
+  box-shadow: inset 2px 2px 0px #d4cdbc;
+  font-family: 'IBM Plex Mono', monospace;
+  color: #181615;
+}
+
+.retro-input:focus {
+  outline: none;
+  background-color: #fffdf7;
+  box-shadow: inset 2px 2px 0px #f4b942;
+}
+
+/* Perforated / Dashed Receipt Divider */
+.retro-dashed-b {
+  border-bottom: 2px dashed #8c8576;
+}
+
+/* Rubber Stamp Badge */
+.retro-stamp {
+  border: 1.5px solid currentColor;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Chunky Retro Scrollbars */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #e6dfd0;
+  border-left: 2px solid #181615;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #f4b942;
+  border: 2px solid #181615;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #df4b2f;
+}
